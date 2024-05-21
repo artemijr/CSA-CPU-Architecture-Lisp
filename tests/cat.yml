@@ -1,0 +1,172 @@
+in_source: |-
+  ; init memory
+  (alloc_num val 0)
+
+  ; transfer output to input
+  (input val)
+  (while (get_val val) do
+      (output (get_val val))
+      (input val)
+  )
+in_stdin: |
+  bla-bla
+out_stdout: |
+  LoC: 9 Instr: 30 Code bytes: 120
+  ============================================================
+  bla-bla
+
+  Instructions: 104 Ticks: 293
+out_mnemonics: |
+  0 - 0000000D - Opcode.PUSH
+  1 - 0000001C - Address: val
+  2 - 0000000D - Opcode.PUSH
+  3 - 00000000 - Number-value
+  4 - 0000000A - Opcode.GET_VAL
+  5 - 0000000B - Opcode.STORE_VAL
+  6 - 0000000D - Opcode.PUSH
+  7 - 0000001C - Address: val
+  8 - 0000000A - Opcode.GET_VAL
+  9 - 00000001 - Opcode.JZ
+  10 - 00000019 - Address: while_after0
+  11 - 0000000D - Opcode.PUSH
+  12 - 00000001 - Number-value
+  13 - 0000000D - Opcode.PUSH
+  14 - 0000001C - Address: val
+  15 - 0000000A - Opcode.GET_VAL
+  16 - 0000000B - Opcode.STORE_VAL
+  17 - 0000000D - Opcode.PUSH
+  18 - 0000001C - Address: val
+  19 - 0000000D - Opcode.PUSH
+  20 - 00000000 - Number-value
+  21 - 0000000A - Opcode.GET_VAL
+  22 - 0000000B - Opcode.STORE_VAL
+  23 - 00000000 - Opcode.JMP
+  24 - 00000006 - Number-value
+  25 - 00000004 - Opcode.HLT
+out_code:
+- 0
+- 13
+- 28
+- 13
+- 0
+- 10
+- 11
+- 13
+- 28
+- 10
+- 1
+- 25
+- 13
+- 1
+- 13
+- 28
+- 10
+- 11
+- 13
+- 28
+- 13
+- 0
+- 10
+- 11
+- 0
+- 6
+- 4
+- 0
+- 0
+- 0
+out_log: |
+  INFO     root:simulation.py:65 Start simulation
+  DEBUG    root:simulation.py:20 TICK:    0 [ 0: PUSH      ] PC:   0 RSP: -1 TOS:  -1 DA:   0 SP: -1 STACK: [-1, -1, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:    3 [ 2: PUSH      ] PC:   2 RSP: -1 TOS:  28 DA:   0 SP:  0 STACK: [28, -1, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:    6 [ 4: GET_VAL   ] PC:   4 RSP: -1 TOS:   0 DA:   0 SP:  1 STACK: [28, 0, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:84 input: b
+  DEBUG    root:simulation.py:28 TICK:    9 [ 5: STORE_VAL ] PC:   5 RSP: -1 TOS:  98 DA:   0 SP:  1 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   12 [ 6: PUSH      ] PC:   6 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   15 [ 8: GET_VAL   ] PC:   8 RSP: -1 TOS:  28 DA:  28 SP:  0 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   18 [ 9: JZ        ] PC:   9 RSP: -1 TOS:  98 DA:  28 SP:  0 STACK: [98, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   20 [11: PUSH      ] PC:  11 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [98, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   23 [13: PUSH      ] PC:  13 RSP: -1 TOS:   1 DA:  28 SP:  0 STACK: [1, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   26 [15: GET_VAL   ] PC:  15 RSP: -1 TOS:  28 DA:  28 SP:  1 STACK: [1, 28, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   29 [16: STORE_VAL ] PC:  16 RSP: -1 TOS:  98 DA:  28 SP:  1 STACK: [1, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:90 output: b << b
+  DEBUG    root:simulation.py:28 TICK:   32 [17: PUSH      ] PC:  17 RSP: -1 TOS:  -1 DA:   1 SP: -1 STACK: [1, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   35 [19: PUSH      ] PC:  19 RSP: -1 TOS:  28 DA:   1 SP:  0 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   38 [21: GET_VAL   ] PC:  21 RSP: -1 TOS:   0 DA:   1 SP:  1 STACK: [28, 0, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:84 input: l
+  DEBUG    root:simulation.py:28 TICK:   41 [22: STORE_VAL ] PC:  22 RSP: -1 TOS:  108 DA:   0 SP:  1 STACK: [28, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   44 [23: JMP       ] PC:  23 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   46 [ 6: PUSH      ] PC:   6 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   49 [ 8: GET_VAL   ] PC:   8 RSP: -1 TOS:  28 DA:  28 SP:  0 STACK: [28, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   52 [ 9: JZ        ] PC:   9 RSP: -1 TOS:  108 DA:  28 SP:  0 STACK: [108, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   54 [11: PUSH      ] PC:  11 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [108, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   57 [13: PUSH      ] PC:  13 RSP: -1 TOS:   1 DA:  28 SP:  0 STACK: [1, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   60 [15: GET_VAL   ] PC:  15 RSP: -1 TOS:  28 DA:  28 SP:  1 STACK: [1, 28, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   63 [16: STORE_VAL ] PC:  16 RSP: -1 TOS:  108 DA:  28 SP:  1 STACK: [1, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:90 output: bl << l
+  DEBUG    root:simulation.py:28 TICK:   66 [17: PUSH      ] PC:  17 RSP: -1 TOS:  -1 DA:   1 SP: -1 STACK: [1, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   69 [19: PUSH      ] PC:  19 RSP: -1 TOS:  28 DA:   1 SP:  0 STACK: [28, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   72 [21: GET_VAL   ] PC:  21 RSP: -1 TOS:   0 DA:   1 SP:  1 STACK: [28, 0, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:84 input: a
+  DEBUG    root:simulation.py:28 TICK:   75 [22: STORE_VAL ] PC:  22 RSP: -1 TOS:  97 DA:   0 SP:  1 STACK: [28, 97, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   78 [23: JMP       ] PC:  23 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 97, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   80 [ 6: PUSH      ] PC:   6 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 97, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   83 [ 8: GET_VAL   ] PC:   8 RSP: -1 TOS:  28 DA:  28 SP:  0 STACK: [28, 97, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   86 [ 9: JZ        ] PC:   9 RSP: -1 TOS:  97 DA:  28 SP:  0 STACK: [97, 97, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   88 [11: PUSH      ] PC:  11 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [97, 97, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   91 [13: PUSH      ] PC:  13 RSP: -1 TOS:   1 DA:  28 SP:  0 STACK: [1, 97, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   94 [15: GET_VAL   ] PC:  15 RSP: -1 TOS:  28 DA:  28 SP:  1 STACK: [1, 28, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:   97 [16: STORE_VAL ] PC:  16 RSP: -1 TOS:  97 DA:  28 SP:  1 STACK: [1, 97, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:90 output: bla << a
+  DEBUG    root:simulation.py:28 TICK:  100 [17: PUSH      ] PC:  17 RSP: -1 TOS:  -1 DA:   1 SP: -1 STACK: [1, 97, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  103 [19: PUSH      ] PC:  19 RSP: -1 TOS:  28 DA:   1 SP:  0 STACK: [28, 97, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  106 [21: GET_VAL   ] PC:  21 RSP: -1 TOS:   0 DA:   1 SP:  1 STACK: [28, 0, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:84 input: -
+  DEBUG    root:simulation.py:28 TICK:  109 [22: STORE_VAL ] PC:  22 RSP: -1 TOS:  45 DA:   0 SP:  1 STACK: [28, 45, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  112 [23: JMP       ] PC:  23 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 45, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  114 [ 6: PUSH      ] PC:   6 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 45, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  117 [ 8: GET_VAL   ] PC:   8 RSP: -1 TOS:  28 DA:  28 SP:  0 STACK: [28, 45, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  120 [ 9: JZ        ] PC:   9 RSP: -1 TOS:  45 DA:  28 SP:  0 STACK: [45, 45, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  122 [11: PUSH      ] PC:  11 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [45, 45, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  125 [13: PUSH      ] PC:  13 RSP: -1 TOS:   1 DA:  28 SP:  0 STACK: [1, 45, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  128 [15: GET_VAL   ] PC:  15 RSP: -1 TOS:  28 DA:  28 SP:  1 STACK: [1, 28, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  131 [16: STORE_VAL ] PC:  16 RSP: -1 TOS:  45 DA:  28 SP:  1 STACK: [1, 45, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:90 output: bla- << -
+  DEBUG    root:simulation.py:28 TICK:  134 [17: PUSH      ] PC:  17 RSP: -1 TOS:  -1 DA:   1 SP: -1 STACK: [1, 45, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  137 [19: PUSH      ] PC:  19 RSP: -1 TOS:  28 DA:   1 SP:  0 STACK: [28, 45, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  140 [21: GET_VAL   ] PC:  21 RSP: -1 TOS:   0 DA:   1 SP:  1 STACK: [28, 0, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:84 input: b
+  DEBUG    root:simulation.py:28 TICK:  143 [22: STORE_VAL ] PC:  22 RSP: -1 TOS:  98 DA:   0 SP:  1 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  146 [23: JMP       ] PC:  23 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  148 [ 6: PUSH      ] PC:   6 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  151 [ 8: GET_VAL   ] PC:   8 RSP: -1 TOS:  28 DA:  28 SP:  0 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  154 [ 9: JZ        ] PC:   9 RSP: -1 TOS:  98 DA:  28 SP:  0 STACK: [98, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  156 [11: PUSH      ] PC:  11 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [98, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  159 [13: PUSH      ] PC:  13 RSP: -1 TOS:   1 DA:  28 SP:  0 STACK: [1, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  162 [15: GET_VAL   ] PC:  15 RSP: -1 TOS:  28 DA:  28 SP:  1 STACK: [1, 28, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  165 [16: STORE_VAL ] PC:  16 RSP: -1 TOS:  98 DA:  28 SP:  1 STACK: [1, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:90 output: bla-b << b
+  DEBUG    root:simulation.py:28 TICK:  168 [17: PUSH      ] PC:  17 RSP: -1 TOS:  -1 DA:   1 SP: -1 STACK: [1, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  171 [19: PUSH      ] PC:  19 RSP: -1 TOS:  28 DA:   1 SP:  0 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  174 [21: GET_VAL   ] PC:  21 RSP: -1 TOS:   0 DA:   1 SP:  1 STACK: [28, 0, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:84 input: l
+  DEBUG    root:simulation.py:28 TICK:  177 [22: STORE_VAL ] PC:  22 RSP: -1 TOS:  108 DA:   0 SP:  1 STACK: [28, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  180 [23: JMP       ] PC:  23 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  182 [ 6: PUSH      ] PC:   6 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  185 [ 8: GET_VAL   ] PC:   8 RSP: -1 TOS:  28 DA:  28 SP:  0 STACK: [28, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  188 [ 9: JZ        ] PC:   9 RSP: -1 TOS:  108 DA:  28 SP:  0 STACK: [108, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  190 [11: PUSH      ] PC:  11 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [108, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  193 [13: PUSH      ] PC:  13 RSP: -1 TOS:   1 DA:  28 SP:  0 STACK: [1, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  196 [15: GET_VAL   ] PC:  15 RSP: -1 TOS:  28 DA:  28 SP:  1 STACK: [1, 28, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:simulation.py:28 TICK:  199 [16: STORE_VAL ] PC:  16 RSP: -1 TOS:  108 DA:  28 SP:  1 STACK: [1, 108, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+  DEBUG    root:datapath.py:90 output: bla-bl << l
+  DEBUG    root:datapath.py:84 input: a
+  DEBUG    root:datapath.py:90 output: bla-bla << a
+  DEBUG    root:datapath.py:84 input: 
+
+  DEBUG    root:datapath.py:90 output: bla-bla
+   << 
+
+  DEBUG    root:datapath.py:84 input: 
+  INFO     root:simulation.py:44 output_buffer: bla-bla
+
+  INFO     root:simulation.py:69 End simulation
