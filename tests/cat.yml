@@ -17,32 +17,32 @@ out_stdout: |
 
   Instructions: 104 Ticks: 293
 out_mnemonics: |
-  0 - 0000000D - Opcode.PUSH
-  1 - 0000001C - Address: val
-  2 - 0000000D - Opcode.PUSH
-  3 - 00000000 - Number-value
-  4 - 0000000A - Opcode.GET_VAL
-  5 - 0000000B - Opcode.STORE_VAL
-  6 - 0000000D - Opcode.PUSH
-  7 - 0000001C - Address: val
-  8 - 0000000A - Opcode.GET_VAL
-  9 - 00000001 - Opcode.JZ
-  10 - 00000019 - Address: while_after0
+  00 - 0000000D - Opcode.PUSH
+  01 - 0000001C - Address: val
+  02 - 0000000D - Opcode.PUSH
+  03 - 00000000 - Number-value
+  04 - 0000000A - Opcode.GET_VAL
+  05 - 0000000B - Opcode.STORE_VAL
+  06 - 0000000D - Opcode.PUSH
+  07 - 0000001C - Address: val
+  08 - 0000000A - Opcode.GET_VAL
+  09 - 00000001 - Opcode.JZ
+  0A - 00000019 - Address: while_after0
+  0B - 0000000D - Opcode.PUSH
+  0C - 00000001 - Number-value
+  0D - 0000000D - Opcode.PUSH
+  0E - 0000001C - Address: val
+  0F - 0000000A - Opcode.GET_VAL
+  10 - 0000000B - Opcode.STORE_VAL
   11 - 0000000D - Opcode.PUSH
-  12 - 00000001 - Number-value
+  12 - 0000001C - Address: val
   13 - 0000000D - Opcode.PUSH
-  14 - 0000001C - Address: val
+  14 - 00000000 - Number-value
   15 - 0000000A - Opcode.GET_VAL
   16 - 0000000B - Opcode.STORE_VAL
-  17 - 0000000D - Opcode.PUSH
-  18 - 0000001C - Address: val
-  19 - 0000000D - Opcode.PUSH
-  20 - 00000000 - Number-value
-  21 - 0000000A - Opcode.GET_VAL
-  22 - 0000000B - Opcode.STORE_VAL
-  23 - 00000000 - Opcode.JMP
-  24 - 00000006 - Number-value
-  25 - 00000004 - Opcode.HLT
+  17 - 00000000 - Opcode.JMP
+  18 - 00000006 - Number-value
+  19 - 00000004 - Opcode.HLT
 out_code:
 - 0
 - 13

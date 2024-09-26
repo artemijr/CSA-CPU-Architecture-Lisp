@@ -29,68 +29,68 @@ out_stdout: |
   234168
   Instructions: 29612 Ticks: 77965
 out_mnemonics: |
-  0 - 0000000D - Opcode.PUSH
-  1 - 00000041 - Address: sum
-  2 - 0000000D - Opcode.PUSH
-  3 - 00000041 - Address: sum
-  4 - 0000000A - Opcode.GET_VAL
-  5 - 0000000D - Opcode.PUSH
-  6 - 00000040 - Address: i
-  7 - 0000000A - Opcode.GET_VAL
-  8 - 00000014 - Opcode.ADD
-  9 - 0000000B - Opcode.STORE_VAL
-  10 - 00000003 - Opcode.RET
-  11 - 0000000D - Opcode.PUSH
-  12 - 00000040 - Address: i
-  13 - 0000000A - Opcode.GET_VAL
-  14 - 00000001 - Opcode.JZ
-  15 - 00000037 - Address: while_after0
+  00 - 0000000D - Opcode.PUSH
+  01 - 00000041 - Address: sum
+  02 - 0000000D - Opcode.PUSH
+  03 - 00000041 - Address: sum
+  04 - 0000000A - Opcode.GET_VAL
+  05 - 0000000D - Opcode.PUSH
+  06 - 00000040 - Address: i
+  07 - 0000000A - Opcode.GET_VAL
+  08 - 00000014 - Opcode.ADD
+  09 - 0000000B - Opcode.STORE_VAL
+  0A - 00000003 - Opcode.RET
+  0B - 0000000D - Opcode.PUSH
+  0C - 00000040 - Address: i
+  0D - 0000000A - Opcode.GET_VAL
+  0E - 00000001 - Opcode.JZ
+  0F - 00000037 - Address: while_after0
+  10 - 0000000D - Opcode.PUSH
+  11 - 00000040 - Address: i
+  12 - 0000000A - Opcode.GET_VAL
+  13 - 0000000D - Opcode.PUSH
+  14 - 00000003 - Number-value
+  15 - 00000016 - Opcode.MOD
   16 - 0000000D - Opcode.PUSH
-  17 - 00000040 - Address: i
-  18 - 0000000A - Opcode.GET_VAL
+  17 - 00000000 - Number-value
+  18 - 00000017 - Opcode.EQ
   19 - 0000000D - Opcode.PUSH
-  20 - 00000003 - Number-value
-  21 - 00000016 - Opcode.MOD
-  22 - 0000000D - Opcode.PUSH
-  23 - 00000000 - Number-value
-  24 - 00000017 - Opcode.EQ
-  25 - 0000000D - Opcode.PUSH
-  26 - 00000040 - Address: i
-  27 - 0000000A - Opcode.GET_VAL
-  28 - 0000000D - Opcode.PUSH
-  29 - 00000005 - Number-value
-  30 - 00000016 - Opcode.MOD
+  1A - 00000040 - Address: i
+  1B - 0000000A - Opcode.GET_VAL
+  1C - 0000000D - Opcode.PUSH
+  1D - 00000005 - Number-value
+  1E - 00000016 - Opcode.MOD
+  1F - 0000000D - Opcode.PUSH
+  20 - 00000000 - Number-value
+  21 - 00000017 - Opcode.EQ
+  22 - 00000018 - Opcode.OR
+  23 - 00000001 - Opcode.JZ
+  24 - 0000002C - Address: if_to_else0
+  25 - 0000000F - Opcode.PUSHR
+  26 - 00000041 - Address: sum
+  27 - 00000002 - Opcode.CALL
+  28 - 00000000 - Number-value
+  29 - 00000010 - Opcode.DROPR
+  2A - 00000000 - Opcode.JMP
+  2B - 0000002C - Address: if_from_then0
+  2C - 0000000D - Opcode.PUSH
+  2D - 00000040 - Address: i
+  2E - 0000000D - Opcode.PUSH
+  2F - 00000040 - Address: i
+  30 - 0000000A - Opcode.GET_VAL
   31 - 0000000D - Opcode.PUSH
-  32 - 00000000 - Number-value
-  33 - 00000017 - Opcode.EQ
-  34 - 00000018 - Opcode.OR
-  35 - 00000001 - Opcode.JZ
-  36 - 0000002C - Address: if_to_else0
-  37 - 0000000F - Opcode.PUSHR
-  38 - 00000041 - Address: sum
-  39 - 00000002 - Opcode.CALL
-  40 - 00000000 - Number-value
-  41 - 00000010 - Opcode.DROPR
-  42 - 00000000 - Opcode.JMP
-  43 - 0000002C - Address: if_from_then0
-  44 - 0000000D - Opcode.PUSH
-  45 - 00000040 - Address: i
-  46 - 0000000D - Opcode.PUSH
-  47 - 00000040 - Address: i
-  48 - 0000000A - Opcode.GET_VAL
-  49 - 0000000D - Opcode.PUSH
-  50 - 00000001 - Number-value
-  51 - 00000015 - Opcode.SUB
-  52 - 0000000B - Opcode.STORE_VAL
-  53 - 00000000 - Opcode.JMP
-  54 - 0000000B - Number-value
-  55 - 0000000D - Opcode.PUSH
-  56 - 00000001 - Number-value
-  57 - 0000000D - Opcode.PUSH
-  58 - 00000041 - Address: sum
-  59 - 0000000A - Opcode.GET_VAL
-  60 - 0000000B - Opcode.STORE_VAL
-  61 - 00000004 - Opcode.HLT
+  32 - 00000001 - Number-value
+  33 - 00000015 - Opcode.SUB
+  34 - 0000000B - Opcode.STORE_VAL
+  35 - 00000000 - Opcode.JMP
+  36 - 0000000B - Number-value
+  37 - 0000000D - Opcode.PUSH
+  38 - 00000001 - Number-value
+  39 - 0000000D - Opcode.PUSH
+  3A - 00000041 - Address: sum
+  3B - 0000000A - Opcode.GET_VAL
+  3C - 0000000B - Opcode.STORE_VAL
+  3D - 00000004 - Opcode.HLT
 out_code:
 - 11
 - 13
