@@ -218,32 +218,32 @@ string ::= "\"" {<any except "\n" ";"> "\""} "\""
 
 Пример:
 ```
-0 - 0000000D - Opcode.PUSH
-1 - 0000001C - Address: val
-2 - 0000000D - Opcode.PUSH
-3 - 00000000 - Number-value
-4 - 0000000A - Opcode.GET_VAL
-5 - 0000000B - Opcode.STORE_VAL
-6 - 0000000D - Opcode.PUSH
-7 - 0000001C - Address: val
-8 - 0000000A - Opcode.GET_VAL
-9 - 00000001 - Opcode.JZ
-10 - 00000019 - Address: while_after0
+00 - 0000000D - Opcode.PUSH
+01 - 0000001C - Address: val
+02 - 0000000D - Opcode.PUSH
+03 - 00000000 - Number-value
+04 - 0000000A - Opcode.GET_VAL
+05 - 0000000B - Opcode.STORE_VAL
+06 - 0000000D - Opcode.PUSH
+07 - 0000001C - Address: val
+08 - 0000000A - Opcode.GET_VAL
+09 - 00000001 - Opcode.JZ
+0A - 00000019 - Address: while_after0
+0B - 0000000D - Opcode.PUSH
+0C - 00000001 - Number-value
+0D - 0000000D - Opcode.PUSH
+0E - 0000001C - Address: val
+0F - 0000000A - Opcode.GET_VAL
+10 - 0000000B - Opcode.STORE_VAL
 11 - 0000000D - Opcode.PUSH
-12 - 00000001 - Number-value
+12 - 0000001C - Address: val
 13 - 0000000D - Opcode.PUSH
-14 - 0000001C - Address: val
+14 - 00000000 - Number-value
 15 - 0000000A - Opcode.GET_VAL
 16 - 0000000B - Opcode.STORE_VAL
-17 - 0000000D - Opcode.PUSH
-18 - 0000001C - Address: val
-19 - 0000000D - Opcode.PUSH
-20 - 00000000 - Number-value
-21 - 0000000A - Opcode.GET_VAL
-22 - 0000000B - Opcode.STORE_VAL
-23 - 00000000 - Opcode.JMP
-24 - 00000006 - Number-value
-25 - 00000004 - Opcode.HLT
+17 - 00000000 - Opcode.JMP
+18 - 00000006 - Number-value
+19 - 00000004 - Opcode.HLT
 ```
 
 В модуле [isa.py](./machine/isa.py) тип данных `Opcode` - перечисление кодов операций
@@ -420,32 +420,32 @@ LoC: 9 Instr: 30 Code bytes: 120
 ```
 - Мнемоники
 ```
-0 - 0000000D  - Opcode.PUSH
-1 - 0000001C  - Address: val
-2 - 0000000D  - Opcode.PUSH
-3 - 00000000  - Number-value
-4 - 0000000A  - Opcode.GET_VAL
-5 - 0000000B  - Opcode.STORE_VAL
-6 - 0000000D  - Opcode.PUSH
-7 - 0000001C  - Address: val
-8 - 0000000A  - Opcode.GET_VAL
-9 - 00000001  - Opcode.JZ
-10 - 00000019 - Address: while_after0
+00 - 0000000D - Opcode.PUSH
+01 - 0000001C - Address: val
+02 - 0000000D - Opcode.PUSH
+03 - 00000000 - Number-value
+04 - 0000000A - Opcode.GET_VAL
+05 - 0000000B - Opcode.STORE_VAL
+06 - 0000000D - Opcode.PUSH
+07 - 0000001C - Address: val
+08 - 0000000A - Opcode.GET_VAL
+09 - 00000001 - Opcode.JZ
+0A - 00000019 - Address: while_after0
+0B - 0000000D - Opcode.PUSH
+0C - 00000001 - Number-value
+0D - 0000000D - Opcode.PUSH
+0E - 0000001C - Address: val
+0F - 0000000A - Opcode.GET_VAL
+10 - 0000000B - Opcode.STORE_VAL
 11 - 0000000D - Opcode.PUSH
-12 - 00000001 - Number-value
+12 - 0000001C - Address: val
 13 - 0000000D - Opcode.PUSH
-14 - 0000001C - Address: val
+14 - 00000000 - Number-value
 15 - 0000000A - Opcode.GET_VAL
 16 - 0000000B - Opcode.STORE_VAL
-17 - 0000000D - Opcode.PUSH
-18 - 0000001C - Address: val
-19 - 0000000D - Opcode.PUSH
-20 - 00000000 - Number-value
-21 - 0000000A - Opcode.GET_VAL
-22 - 0000000B - Opcode.STORE_VAL
-23 - 00000000 - Opcode.JMP
-24 - 00000006 - Number-value
-25 - 00000004 - Opcode.HLT
+17 - 00000000 - Opcode.JMP
+18 - 00000006 - Number-value
+19 - 00000004 - Opcode.HLT
 ```
 - Вывод процессора (логирование уровня INFO)
 ```
@@ -458,20 +458,20 @@ Instructions: 92 Ticks: 259
 ```
 - Журнал работы, логирование уровня DEBUG (часть)
 ```
-python .\simulation.py .\code_out\cat.o .\code_inputs\text.txt
+python .\simulation.py .\code_out\cat.out .\code_inputs\text.txt   
 INFO:root:Start simulation
-DEBUG:root:TICK:    0 [ 0: PUSH      ] PC:   0 RSP: -1 TOS:  -1 DA:   0 SP: -1 STACK: [-1, -1, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
-DEBUG:root:TICK:    3 [ 2: PUSH      ] PC:   2 RSP: -1 TOS:  28 DA:   0 SP:  0 STACK: [28, -1, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
-DEBUG:root:TICK:    6 [ 4: GET_VAL   ] PC:   4 RSP: -1 TOS:   0 DA:   0 SP:  1 STACK: [28, 0, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
+DEBUG:root:TICK:    0 [ 0: PUSH      ] PC:   0 RSP: -1 TOS:  -1 DA:   0 SP: -1 STACK: [-1, -1, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+DEBUG:root:TICK:    3 [ 2: PUSH      ] PC:   2 RSP: -1 TOS:  28 DA:   0 SP:  0 STACK: [28, -1, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+DEBUG:root:TICK:    6 [ 4: GET_VAL   ] PC:   4 RSP: -1 TOS:   0 DA:   0 SP:  1 STACK: [28, 0, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
 DEBUG:root:input: b
-DEBUG:root:TICK:    9 [ 5: STORE_VAL ] PC:   5 RSP: -1 TOS:  98 DA:   0 SP:  1 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
-DEBUG:root:TICK:   12 [ 6: PUSH      ] PC:   6 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
-DEBUG:root:TICK:   15 [ 8: GET_VAL   ] PC:   8 RSP: -1 TOS:  28 DA:  28 SP:  0 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
-DEBUG:root:TICK:   18 [ 9: JZ        ] PC:   9 RSP: -1 TOS:  98 DA:  28 SP:  0 STACK: [98, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
-DEBUG:root:TICK:   20 [11: PUSH      ] PC:  11 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [98, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
-DEBUG:root:TICK:   23 [13: PUSH      ] PC:  13 RSP: -1 TOS:   1 DA:  28 SP:  0 STACK: [1, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
-DEBUG:root:TICK:   26 [15: GET_VAL   ] PC:  15 RSP: -1 TOS:  28 DA:  28 SP:  1 STACK: [1, 28, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
-DEBUG:root:TICK:   29 [16: STORE_VAL ] PC:  16 RSP: -1 TOS:  98 DA:  28 SP:  1 STACK: [1, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
+DEBUG:root:TICK:    9 [ 5: STORE_VAL ] PC:   5 RSP: -1 TOS:  98 DA:   0 SP:  1 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+DEBUG:root:TICK:   12 [ 6: PUSH      ] PC:   6 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+DEBUG:root:TICK:   15 [ 8: GET_VAL   ] PC:   8 RSP: -1 TOS:  28 DA:  28 SP:  0 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+DEBUG:root:TICK:   18 [ 9: JZ        ] PC:   9 RSP: -1 TOS:  98 DA:  28 SP:  0 STACK: [98, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+DEBUG:root:TICK:   20 [11: PUSH      ] PC:  11 RSP: -1 TOS:  -1 DA:  28 SP: -1 STACK: [98, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+DEBUG:root:TICK:   23 [13: PUSH      ] PC:  13 RSP: -1 TOS:   1 DA:  28 SP:  0 STACK: [1, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+DEBUG:root:TICK:   26 [15: GET_VAL   ] PC:  15 RSP: -1 TOS:  28 DA:  28 SP:  1 STACK: [1, 28, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
+DEBUG:root:TICK:   29 [16: STORE_VAL ] PC:  16 RSP: -1 TOS:  98 DA:  28 SP:  1 STACK: [1, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1] 
 DEBUG:root:output: b << b
 DEBUG:root:TICK:   32 [17: PUSH      ] PC:  17 RSP: -1 TOS:  -1 DA:   1 SP: -1 STACK: [1, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
 DEBUG:root:TICK:   35 [19: PUSH      ] PC:  19 RSP: -1 TOS:  28 DA:   1 SP:  0 STACK: [28, 98, -1, -1, -1] RSTACK: [-1, -1, -1, -1, -1]
