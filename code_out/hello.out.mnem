@@ -1,0 +1,45 @@
+00 - 0000000D - Opcode.PUSH
+01 - 0000003D - Address: addr
+02 - 0000000D - Opcode.PUSH
+03 - 0000002F - Address: hello
+04 - 0000000B - Opcode.STORE_VAL
+05 - 0000000D - Opcode.PUSH
+06 - 0000003E - Address: len
+07 - 0000000D - Opcode.PUSH
+08 - 0000003D - Address: addr
+09 - 0000000A - Opcode.GET_VAL
+0A - 0000000A - Opcode.GET_VAL
+0B - 0000000B - Opcode.STORE_VAL
+0C - 0000000D - Opcode.PUSH
+0D - 0000003E - Address: len
+0E - 0000000A - Opcode.GET_VAL
+0F - 00000001 - Opcode.JZ
+10 - 0000002C - Address: while_after0
+11 - 0000000D - Opcode.PUSH
+12 - 0000003E - Address: len
+13 - 0000000D - Opcode.PUSH
+14 - 0000003E - Address: len
+15 - 0000000A - Opcode.GET_VAL
+16 - 0000000D - Opcode.PUSH
+17 - 00000001 - Number-value
+18 - 00000015 - Opcode.SUB
+19 - 0000000B - Opcode.STORE_VAL
+1A - 0000000D - Opcode.PUSH
+1B - 0000003D - Address: addr
+1C - 0000000D - Opcode.PUSH
+1D - 0000003D - Address: addr
+1E - 0000000A - Opcode.GET_VAL
+1F - 0000000D - Opcode.PUSH
+20 - 00000001 - Number-value
+21 - 00000014 - Opcode.ADD
+22 - 0000000B - Opcode.STORE_VAL
+23 - 0000000D - Opcode.PUSH
+24 - 00000001 - Number-value
+25 - 0000000D - Opcode.PUSH
+26 - 0000003D - Address: addr
+27 - 0000000A - Opcode.GET_VAL
+28 - 0000000A - Opcode.GET_VAL
+29 - 0000000B - Opcode.STORE_VAL
+2A - 00000000 - Opcode.JMP
+2B - 0000000C - Number-value
+2C - 00000004 - Opcode.HLT

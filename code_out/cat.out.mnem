@@ -1,0 +1,26 @@
+00 - 0000000D - Opcode.PUSH
+01 - 0000001C - Address: val
+02 - 0000000D - Opcode.PUSH
+03 - 00000000 - Number-value
+04 - 0000000A - Opcode.GET_VAL
+05 - 0000000B - Opcode.STORE_VAL
+06 - 0000000D - Opcode.PUSH
+07 - 0000001C - Address: val
+08 - 0000000A - Opcode.GET_VAL
+09 - 00000001 - Opcode.JZ
+0A - 00000019 - Address: while_after0
+0B - 0000000D - Opcode.PUSH
+0C - 00000001 - Number-value
+0D - 0000000D - Opcode.PUSH
+0E - 0000001C - Address: val
+0F - 0000000A - Opcode.GET_VAL
+10 - 0000000B - Opcode.STORE_VAL
+11 - 0000000D - Opcode.PUSH
+12 - 0000001C - Address: val
+13 - 0000000D - Opcode.PUSH
+14 - 00000000 - Number-value
+15 - 0000000A - Opcode.GET_VAL
+16 - 0000000B - Opcode.STORE_VAL
+17 - 00000000 - Opcode.JMP
+18 - 00000006 - Number-value
+19 - 00000004 - Opcode.HLT
