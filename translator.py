@@ -196,20 +196,20 @@ def translate_stage_2(variables: dict, tokens: list):
     mnemonics = []
     for ind, token in enumerate(tokens):
         if isinstance(token, Opcode):
-            mnemonics.append(f"{ind} - {token.value:08X} - {token}")
+            mnemonics.append(f"{ind:02X} - {token.value:08X} - {token}")
             code.append(token.value)
         elif isinstance(token, int):
             assert MIN_SIGN <= token <= MAX_SIGN, f"{BITS}-bit numbers only {token}"
-            mnemonics.append(f"{ind} - {token:08X} - Number-value")
+            mnemonics.append(f"{ind:02X} - {token:08X} - Number-value")
             code.append(token)
         elif isinstance(token, str) and token.isnumeric():
             token = int(token)
             assert MIN_SIGN <= token <= MAX_SIGN, f"{BITS}-bit numbers only {token}"
-            mnemonics.append(f"{ind} - {token:08X} - Number-value")
+            mnemonics.append(f"{ind:02X} - {token:08X} - Number-value")
             code.append(token)
         else:
             assert token in variables, f"Variable is not defined: {token}"
-            mnemonics.append(f"{ind} - {variables[token]:08X} - Address: {token}")
+            mnemonics.append(f"{ind:02X} - {variables[token]:08X} - Address: {token}")
             code.append(variables[token])
 
     return code, mnemonics
